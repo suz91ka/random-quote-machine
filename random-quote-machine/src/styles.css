@@ -1,0 +1,66 @@
+body {
+    margin: 0px;
+    vertical-align: baseline;
+  }
+  
+  #quote-box {
+    font-family: system-ui;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    height: 100vh;  
+  }
+  
+  #wrapper {
+    background: white;
+    border: 5px  solid white;
+    border-radius: 0.4rem;
+    margin: auto;
+    padding: 40px 50px ;
+    width: 400px;
+  }
+  
+  #author{
+    float:right;
+    font-size: 0.8em;
+    padding-top: 20px;
+  }
+  #nav-bar{
+      border: none;
+      border-radius: 3px;
+      outline: none;
+      font-size: 0.85em;
+      padding: 20px 0px;
+      margin-top: 50px;
+      opacity: 1;
+  }
+  .button{
+    float: right;
+    font-size: 1em;
+  }
+  .btn{
+    cursor: pointer;
+    display: inline-block;
+    padding: 7px;
+    margin: 1px;
+    border: white;
+    border-radius: 3px;
+    min-width: 15px;
+    text-align:center;
+    color: white;
+  }
+  .buttons {
+    float: left;
+    margin-right: 5px
+  }
+  footer{
+    display:block;
+    width:400px;
+    text-align:center;
+    margin: 10px;
+    font-size: 0.6em;
+    color: white;
+  }
