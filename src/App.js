@@ -92,31 +92,34 @@ class App extends React.Component {
   // render output
   render() {
     return (
-  <div id="quote-box" style= {{backgroundColor: this.state.color}}>
+  <div className="quote-box" id="quote-box" style= {{backgroundColor: this.state.color}}>
     <div>
-      <div id="wrapper">
+      <div className="wrapper" id="wrapper">
         <section id="text" style= {{color: this.state.color}}>
-          <cite><i class="fa fa-quote-left" aria-hidden="true"></i> {this.state.quote} <i class="fa fa-quote-right" aria-hidden="true"></i></cite>
+          <cite><i className="fa fa-quote-left fa-xs" aria-hidden="true"></i> {this.state.quote} <i class="fa fa-quote-right fa-xs" aria-hidden="true"></i></cite>
           <p id="author"><span>- </span> {this.state.author}</p>
-
-
         </section>
 
-        <div id="nav-bar">
-          <a class="btn buttons" style= {{backgroundColor: this.state.color}} href="twitter.com/intent/tweet" title="Share this quote on Twitter" target="_top">
-            <i class="fa fa-twitter"></i>
-          </a>
+        <div className="footer" id="footer">
+          <div className="footer-content" id="footer-content">
+            <a className="social-media-icons" style= {{backgroundColor: this.state.color}} href="x.com/intent/tweet" title="Share this quote on Twitter" target="_top">
+            <i className="fa-brands fa-x-twitter"></i>
+            </a>
 
-          <a class="btn buttons" style= {{backgroundColor: this.state.color}} href="facebook.com/intent/facebook" title="Post this quote on Facebook" target="blank">
-            <i class="fa fa-facebook"></i>
-          </a>
+            <a className="social-media-icons" style= {{backgroundColor: this.state.color}} href="facebook.com/intent/facebook" title="Post this quote on Facebook" target="blank">
+            <i className="fab fa-facebook-square fa-sm"></i>
+            </a>
 
-          <button class="button btn" style= {{backgroundColor: this.state.color}} id="newQuote" onClick={() => { this.generateRandom() }} type="submit">
+            <a className="social-media-icons" style= {{backgroundColor: this.state.color}} href="instagram.com/intent/instagram" title="Post this quote on Instagram" target="blank">
+            <i className="fa-brands fa-square-instagram"></i>
+           </a>
+
+            <button className="quote-button" style= {{backgroundColor: this.state.color}} id="newQuote" onClick={() => { this.generateRandom() }} type="submit">
             New quote
-          </button> 
+            </button>
+          </div>
         </div>
       </div>
-        <footer>Created by Zuzana</footer>
       </div>
   </div>
     )
