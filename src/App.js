@@ -3,17 +3,19 @@ import './styles.css'
 
 const ArrayColors =
   [
-    "#B4BBBF",
-    "#403440",
-    "#949FA6",
-    "#7B5B6C",
-    "#74818C",
-    "#B58590",
-    "#536473",
-    "#CCA6B4",
-    "#394A59",
-    "#F0DBE3"
+    "#324759",
+    "#591711",
+    "#471915",
+    "#3E00FF",
+    "#A600FF",
+    "#001E51",
+    "#23606E",
+    "#023535",
+    "#015958",
+    "#79717A",
+    "#004F4D", 
   ];
+
 const quotes = [
     {
       "quote": "All our dreams can come true, if we have the courage to pursue them.",
@@ -92,10 +94,10 @@ class App extends React.Component {
   // render output
   render() {
     return (
-  <div className="quote-box" id="quote-box" style= {{backgroundColor: this.state.color}}>
+  <div className="quote-box" id="quote-box" >
     <div>
-      <div className="wrapper" id="wrapper">
-        <section id="text" style= {{color: this.state.color}}>
+      <div className="wrapper" id="wrapper" style= {{backgroundColor: this.state.color}}>
+        <section id="text">
           <cite><i className="fa fa-quote-left fa-xs" aria-hidden="true"></i> {this.state.quote} <i class="fa fa-quote-right fa-xs" aria-hidden="true"></i></cite>
           <p id="author"><span>- </span> {this.state.author}</p>
         </section>

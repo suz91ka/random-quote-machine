@@ -4,23 +4,28 @@ body {
   }
   
   #quote-box {
-    font-family: system-ui;
+    font-family: didot-medium;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 0.8em;
     letter-spacing: 1px;
-    height: 100vh;  
+    height: 100vh;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    
   }
   
   #wrapper {
     background: white;
     border: 5px  solid white;
-    border-radius: 0.4rem;
     margin: auto;
-    padding: 40px 50px ;
+    padding: 40px 40px ;
     width: 400px;
+    border-radius: 10px; 
+    overflow: hidden; 
   }
 
   .cite i {
@@ -29,19 +34,21 @@ body {
   
   #author {
     float:right;
-    font-size: 0.8em;
+    font-size: 0.7em;
     padding-top: 20px;
+    letter-spacing: 1px;
+    font-family: humanist;
   }
 
   .footer {
     position: sticky;
     border: none;
     outline: none;
-    padding-top: 20px;
-    margin-top: 70px;
+    padding-top: 30px;
+    margin-top: 30px;
     opacity: 1;
     width: 100%;
-    bottom: 0;
+    
   }
 
   .footer-content {
@@ -51,27 +58,32 @@ body {
 
   .footer-content .social-media-icons {
     float: left;
-    margin-right: 10px;
-    font-size: 1.0em;
+    margin-right: 5px;
+    font-size: 1em;
     display: flex;
     justify-content: center;
-    
     align-items: center;
     color: white;
     text-decoration: none;
     border-radius: 3px;
     line-height: normal;
-    padding-left: 1px;
+    width: 36px;
+    height: 36px;
   }
 
   .footer-content .quote-button {
     margin-left: auto;
-    width: 100px;
     color: white;
-    font-size: 16px;
+    background-color: #1abc9c;
     cursor: pointer;
-    border: none;
-    border-radius: 5px;
+    border: 0.3px white solid transparent;
+    border-radius: 3px;
+    border-color: white;
+    letter-spacing: 0.8px;
+    font-size: 0.8em;
+    border-width: 0.3px;
+    height: 24px;
+    font-family: humanist;
   }
 
 
