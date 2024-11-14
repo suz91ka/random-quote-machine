@@ -3,7 +3,7 @@ import './styles.css'
 
 const ArrayColors = {
   light: ['#F0F8FF', '#E6E6FA', '#FFF0F5', '#F0FFF0', '#FFFAF0'],
-  dark: ['#2C3E50', '#34495E', '#4A5568', '#1A202C', '#2D3748']
+  dark: ['#2C3E50', '#34495E', '#4A5568', '#1A202C', '#2D3748'],
 }
   
 
@@ -64,26 +64,33 @@ class App extends React.Component {
   state = {
     quote: quotes[0].quote,
     author: quotes[0].author,
-    color: ArrayColors[0]
+    backgroundColor: ArrayColors.light[0],
+    textColor: 'black',
+    isDarkTheme: false
   }
   // define random generate function
   generateRandom = (event) => {
-    let num = Math.floor(Math.random() * quotes.length);
-    console.log(num);
-    let newQuote = quotes[num];
-    
-    num = Math.floor(Math.random() * ArrayColors.length);
-    let newColor = ArrayColors[num];
-    
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.lenght)];
+    const isDarkTheme = Math.random() < 0.5;
+    const colorScheme = isDarkTheme ? ArrayColors.dark : ArrayColors.light;
+    const backgroundColor = colorScheme[Math.random() * colorScheme.lenght];
+    const textColor = isDarkTheme ? "white" : "black";
+
     this.setState({
-      quote: newQuote.quote,
-      author: newQuote.author,
-      color: newColor
-    })
+      quote: randomQuote.quote,
+      author: randomQuote.author,
+      backgroundColor: backgroundColor,
+      textColor: textColor,
+      isDarkTheme: isDarkTheme
+    });
+
+    
   }
   
   // render output
   render() {
+    const { quote, author, backgroundColor, textColor, isDarkTheme } = this.state();
+
     return (
   <div className="quote-box" id="quote-box" >
     <div>
