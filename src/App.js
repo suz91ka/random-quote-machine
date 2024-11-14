@@ -1,20 +1,11 @@
 import React from 'react'
 import './styles.css'
 
-const ArrayColors =
-  [
-    "#324759",
-    "#591711",
-    "#471915",
-    "#3E00FF",
-    "#A600FF",
-    "#001E51",
-    "#23606E",
-    "#023535",
-    "#015958",
-    "#79717A",
-    "#004F4D", 
-  ];
+const ArrayColors = {
+  light: ['#F0F8FF', '#E6E6FA', '#FFF0F5', '#F0FFF0', '#FFFAF0'],
+  dark: ['#2C3E50', '#34495E', '#4A5568', '#1A202C', '#2D3748']
+}
+  
 
 const quotes = [
     {

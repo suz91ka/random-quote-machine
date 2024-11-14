@@ -1,10 +1,11 @@
 body {
     margin: 0px;
     vertical-align: baseline;
+    transition: background-color 0.3s, color 0.3s;
   }
   
   #quote-box {
-    font-family: didot-medium;
+    font-family: didot-medium, serif;
     color: white;
     display: flex;
     justify-content: center;
@@ -12,6 +13,7 @@ body {
     text-align: center;
     font-size: 0.8em;
     letter-spacing: 1px;
+    line-height: 1.4em;
     height: 100vh;
     padding-bottom: 20px;
     border-radius: 10px;
@@ -19,7 +21,6 @@ body {
   }
   
   #wrapper {
-    background: white;
     border: 5px  solid white;
     margin: auto;
     padding: 40px 40px ;
@@ -33,11 +34,11 @@ body {
   }
   
   #author {
-    float:right;
+    float: right;
     font-size: 0.7em;
     padding-top: 20px;
     letter-spacing: 1px;
-    font-family: humanist;
+    font-family: humanist, sans-serif;
   }
 
   .footer {
@@ -53,7 +54,8 @@ body {
 
   .footer-content {
     display: flex;
-    flex-direction: row;  
+    flex-direction: row; 
+    justify-content: space-between;
   }
 
   .footer-content .social-media-icons {
@@ -74,7 +76,7 @@ body {
   .footer-content .quote-button {
     margin-left: auto;
     color: white;
-    background-color: #1abc9c;
+    background-color: transparent;
     cursor: pointer;
     border: 0.3px white solid transparent;
     border-radius: 3px;
@@ -83,8 +85,22 @@ body {
     font-size: 0.8em;
     border-width: 0.3px;
     height: 24px;
-    font-family: humanist;
+    font-family: humanist, sans-serif;
   }
+
+  #theme-toggle {
+    position: absolute;
+    position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px;
+  background-color: transparent;
+  border: 1px solid;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: humanist, sans-serif;
+  }
+    
 
 
   
