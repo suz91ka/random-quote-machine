@@ -68,33 +68,32 @@ class App extends React.Component {
     textColor: 'black',
     isDarkTheme: false
   }
+
   // define random generate function
   generateRandom = (event) => {
-    const randomQuote = quotes[Math.floor(Math.random() * quotes.lenght)];
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
     const isDarkTheme = Math.random() < 0.5;
     const colorScheme = isDarkTheme ? ArrayColors.dark : ArrayColors.light;
-    const backgroundColor = colorScheme[Math.random() * colorScheme.lenght];
+    const backgroundColor = colorScheme[Math.floor(Math.random() * colorScheme.length)];
     const textColor = isDarkTheme ? "white" : "black";
 
     this.setState({
       quote: randomQuote.quote,
       author: randomQuote.author,
       backgroundColor: backgroundColor,
-      textColor: textColor,
-      isDarkTheme: isDarkTheme
+      textColor,
+      isDarkTheme
     });
-
-    
   }
   
   // render output
   render() {
-    const { quote, author, backgroundColor, textColor, isDarkTheme } = this.state();
+    const { quote, author, backgroundColor, textColor, isDarkTheme } = this.state;
 
     return (
-  <div className="quote-box" id="quote-box" >
-    <div>
-      <div className="wrapper" id="wrapper" style= {{backgroundColor: this.state.color}}>
+      <div className="quote-box" id="quote-box" style={{ backgroundColor, color: textColor }} >
+        <div>
+      <div className="wrapper" id="wrapper"style= {{backgroundColor: this.state.color}} >
         <section id="text">
           <cite><i className="fa fa-quote-left fa-xs" aria-hidden="true"></i> {this.state.quote} <i class="fa fa-quote-right fa-xs" aria-hidden="true"></i></cite>
           <p id="author"><span>- </span> {this.state.author}</p>
@@ -114,7 +113,7 @@ class App extends React.Component {
             <i className="fa-brands fa-square-instagram"></i>
            </a>
 
-            <button className="quote-button" style= {{backgroundColor: this.state.color}} id="newQuote" onClick={() => { this.generateRandom() }} type="submit">
+            <button className="quote-button" style= {{backgroundColor: this.state.color}} id="newQuote" onClick={() => {this.generateRandom() }} type="submit">
             New quote
             </button>
           </div>
