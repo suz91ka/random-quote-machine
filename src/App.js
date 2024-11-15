@@ -61,16 +61,22 @@ const quotes = [
 
 class App extends React.Component {
   // set initial state
-  state = {
-    quote: quotes[0].quote,
-    author: quotes[0].author,
-    backgroundColor: ArrayColors.light[0],
-    textColor: 'black',
-    isDarkTheme: false
+  constructor(props) {
+    super(props);
+    this.state = {
+      quote: quotes[0].quote,
+      author: quotes[0].author,
+      backgroundColor: ArrayColors.light[0],
+      textColor: 'black',
+      isDarkTheme: false
+    }
+    this.generateRandom = this.generateRandom.bind(this);
   }
+  
+  
 
   // define random generate function
-  generateRandom = (event) => {
+  generateRandom = () => {
     const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
     const isDarkTheme = Math.random() < 0.5;
     const colorScheme = isDarkTheme ? ArrayColors.dark : ArrayColors.light;
@@ -80,7 +86,7 @@ class App extends React.Component {
     this.setState({
       quote: randomQuote.quote,
       author: randomQuote.author,
-      backgroundColor: backgroundColor,
+      backgroundColor,
       textColor,
       isDarkTheme
     });
@@ -88,32 +94,32 @@ class App extends React.Component {
   
   // render output
   render() {
-    const { quote, author, backgroundColor, textColor, isDarkTheme } = this.state;
+    const {  backgroundColor, textColor } = this.state;
 
     return (
-      <div className="quote-box" id="quote-box" style={{ backgroundColor, color: textColor }} >
+      <div className="quote-box" id="quote-box" style={{ backgroundColor: this.state.color, color: textColor }} >
         <div>
-      <div className="wrapper" id="wrapper"style= {{backgroundColor: this.state.color}} >
-        <section id="text">
+        <div className="wrapper" id="wrapper" style= {{backgroundColor}} >
+          <section id="text">
           <cite><i className="fa fa-quote-left fa-xs" aria-hidden="true"></i> {this.state.quote} <i class="fa fa-quote-right fa-xs" aria-hidden="true"></i></cite>
           <p id="author"><span>- </span> {this.state.author}</p>
-        </section>
+          </section>
 
         <div className="footer" id="footer">
           <div className="footer-content" id="footer-content">
-            <a className="social-media-icons" style= {{backgroundColor: this.state.color}} href="x.com/intent/tweet" title="Share this quote on Twitter" target="_top">
-            <i className="fa-brands fa-x-twitter"></i>
+            <a className="social-media-icons" style= {{backgroundColor: this.state.color, color: textColor}} href="x.com/intent/tweet" title="Share this quote on Twitter" target="_top">
+              <i className="fa-brands fa-x-twitter"></i>
             </a>
 
-            <a className="social-media-icons" style= {{backgroundColor: this.state.color}} href="facebook.com/intent/facebook" title="Post this quote on Facebook" target="blank">
-            <i className="fab fa-facebook-square fa-sm"></i>
+            <a className="social-media-icons" style= {{backgroundColor: this.state.color, color: textColor}} href="facebook.com/intent/facebook" title="Post this quote on Facebook" target="blank">
+              <i className="fab fa-facebook-square fa-sm"></i>
             </a>
 
-            <a className="social-media-icons" style= {{backgroundColor: this.state.color}} href="instagram.com/intent/instagram" title="Post this quote on Instagram" target="blank">
-            <i className="fa-brands fa-square-instagram"></i>
+            <a className="social-media-icons" style= {{backgroundColor: this.state.color, color: textColor}} href="instagram.com/intent/instagram" title="Post this quote on Instagram" target="blank">
+              <i className="fa-brands fa-square-instagram"></i>
            </a>
 
-            <button className="quote-button" style= {{backgroundColor: this.state.color}} id="newQuote" onClick={() => {this.generateRandom() }} type="submit">
+            <button className="quote-button" style= {{backgroundColor: this.state.color, color: textColor}} id="newQuote" onClick={() => {this.generateRandom() }} type="submit">
             New quote
             </button>
           </div>

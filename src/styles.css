@@ -6,7 +6,6 @@ body {
   
   #quote-box {
     font-family: didot-medium, serif;
-    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,7 +59,6 @@ body {
 
   .footer-content .social-media-icons {
     float: left;
-    margin-right: 5px;
     font-size: 1em;
     display: flex;
     justify-content: center;
