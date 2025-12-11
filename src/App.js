@@ -2,8 +2,27 @@ import React from 'react'
 import './styles.css'
 
 const ArrayColors = {
-  light: ['#F0F8FF', '#E6E6FA', '#FFF0F5', '#F0FFF0', '#FFFAF0'],
-  dark: ['#2C3E50', '#34495E', '#4A5568', '#1A202C', '#2D3748'],
+  light: [
+  '#FFEB3B', // Yellow
+  '#FFCDD2', // Rose
+  '#BBDEFB', // Light Blue
+  '#C8E6C9', // Light Green
+  '#FFE0B2', // Peach
+  '#D1C4E9', // Lavender
+  '#B2EBF2', // Aqua
+  '#FFF9C4'  // Pale Lemon
+],
+
+  dark: [
+  '#263238', // Blue Grey
+  '#37474F', // Steel
+  '#4E342E', // Dark Brown
+  '#1B5E20', // Forest Green
+  '#0D47A1', // Deep Blue
+  '#4A148C', // Purple
+  '#880E4F', // Wine Red
+  '#212121'  // Neutral Charcoal
+]
 }
   
 
@@ -56,6 +75,22 @@ const quotes = [
   {
     "quote": "One day or day one. You decide.",
     "author": "Unknown"
+  }
+  {
+    quote: "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+    author: "Winston Churchill"
+  },
+  {
+    quote: "What you do makes a difference, and you have to decide what kind of difference you want to make.",
+    author: "Jane Goodall"
+  },
+  {
+    quote: "Done is better than perfect.",
+    author: "Sheryl Sandberg"
+  },
+  {
+    quote: "The only limit to our realization of tomorrow is our doubts of today.",
+    author: "Franklin D. Roosevelt"
   }
 ];
 
