@@ -1,96 +1,198 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0px;
-    vertical-align: baseline;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  #quote-box {
-    font-family: didot-medium, serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 1.2em;
-    letter-spacing: 1px;
-    line-height: 1.4em;
-    height: 100vh;
-    padding-bottom: 20px;
-    border-radius: 10px;
-    
-  }
-  
-  #wrapper {
-    border: 5px  solid white;
-    margin: auto;
-    padding: 40px 40px ;
-    width: 400px;
-    border-radius: 10px; 
-    overflow: hidden; 
-  }
+  margin: 0;
+  background: #e8e3ef;
+}
 
-  .cite i {
-    line-height: 1.8em;
-  }
-  
-  #author {
-    float: right;
-    font-size: 0.7em;
-    padding-top: 20px;
-    letter-spacing: 1px;
-    font-family: humanist, sans-serif;
-  }
+.quote-page {
+  background: #e8e3ef;
+  color: #292f3a;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 64px 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  color-scheme: light;
+  box-sizing: border-box;
+}
 
-  .footer {
-    position: sticky;
-    border: none;
-    outline: none;
-    padding-top: 30px;
-    margin-top: 30px;
-    opacity: 1;
+.quote-card {
+  --blue-button: #405b78;
+  background: #f0f8ff;
+  transition: background-color .3s ease,color .3s ease;
+  border: 1px solid #d4e0eb;
+  border-radius: 10px;
+  box-shadow: 0 14px 32px #292f3a10;
+  width: 100%;
+  max-width: 520px;
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+.quote-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  color: #526174;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.8px;
+}
+
+.quote-reading {
+  padding: 24px 0 30px;
+}
+
+.quote-mark {
+  display: block;
+  height: 48px;
+  font: 64px Georgia,serif;
+  color: #405b78;
+}
+
+.quote-card blockquote {
+  font: 28px/1.45 Georgia,serif;
+  /* Reserve four lines; longer quotes grow naturally. */
+  min-height: 5.8em;
+  letter-spacing: -.35px;
+  margin: 8px 0 24px;
+  overflow-wrap: anywhere;
+}
+
+#author {
+  font-size: 13px;
+  margin: 0;
+  color: #526174;
+}
+
+.quote-footer {
+  border-top: 1px solid #cedce9;
+  padding-top: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.quote-tools {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.quote-card button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font: 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  min-height: 44px;
+  padding: 10px 10px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: #292f3a;
+  cursor: pointer;
+}
+
+.quote-card button:hover {
+  background: #dfebf6;
+}
+
+.quote-card .quote-button {
+  background: #e3eef8;
+  color: #405b78;
+  border-color: #c8d8e7;
+  padding: 10px 14px;
+}
+
+.quote-card .quote-button:hover {
+  background: #d7e6f3;
+  border-color: #aebfd2;
+}
+
+.quote-card i {
+  width: 16px;
+  height: 16px;
+}
+
+.quote-status {
+  font-size: 12px;
+  color: #526174;
+  margin: 12px 0 0;
+  min-height: 17px;
+  line-height: 1.4;
+}
+
+@media(max-width:480px) {
+  .quote-page {
+    padding: 32px 16px;
+  }
+  .quote-card {
+    padding: 24px;
+  }
+  .quote-card blockquote {
+    font-size: 24px;
+    /* Narrow screens need room for five lines. */
+    min-height: 7.25em;
+  }
+  .quote-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .quote-card .quote-button {
+    order: -1;
     width: 100%;
-    
   }
-
-  .footer-content {
-    display: flex;
-    flex-direction: row; 
-    justify-content: space-between;
-  }
-
-  .footer-content .social-media-icons {
-    float: left;
-    font-size: 1em;
-    display: flex;
+  .quote-tools {
     justify-content: center;
-    align-items: center;
-    color: white;
-    text-decoration: none;
-    border-radius: 3px;
-    line-height: normal;
-    width: 36px;
-    height: 36px;
   }
+}
 
-  .footer-content .quote-button {
-    margin-left: auto;
-    color: white;
-    background-color: transparent;
-    cursor: pointer;
-    border: 0.3px white solid transparent;
-    border-radius: 3px;
-    border-color: white;
-    letter-spacing: 0.8px;
-    font-size: 0.8em;
-    border-width: 0.3px;
-    height: 24px;
-    font-family: humanist, sans-serif;
+.quote-card button:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 4px;
+}
+
+.quote-card-dark .quote-header, .quote-card-dark #author, .quote-card-dark .quote-mark, .quote-card-dark .quote-status {
+  color: inherit;
+}
+
+.quote-card-dark button {
+  color: inherit;
+}
+
+.quote-card-dark .quote-footer {
+  border-color: rgba(255,255,255,.3);
+}
+
+.quote-card-dark button:hover {
+  background: rgba(255,255,255,.12);
+}
+
+.quote-card-dark .quote-button {
+  background: rgba(255,255,255,.12);
+  color: inherit;
+  border-color: rgba(255,255,255,.45);
+}
+
+.quote-card-dark .quote-button:hover {
+  background: rgba(255,255,255,.2);
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .quote-card {
+    transition: none;
   }
+}
 
-  
-    
-
-
-  
-
-
-  
+.quote-header {
+  text-transform: uppercase;
+}
